@@ -1,0 +1,18 @@
+{
+    "version": "0.1",
+    "name": "com.plugin.opcvExample",
+    "cordova_name": "Open CV Example",
+    "description": "Open CV Example",
+    "license": "Apache 2.0",
+    "repo": "",
+    "issue": "",
+    "keywords": [
+                 "cordova",
+                 "device"
+                 ],
+    "platforms": [
+                  "android",
+                  ],
+    "engines": [],
+    "englishdoc": ""
+}

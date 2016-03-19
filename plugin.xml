@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-plugin-opcvExample"
+    version="0.2.11">
+    <name>CoolPlugin</name>
+    <description>The coolest Plugin ever implemented</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,coolest</keywords>
+    <repo></repo>
+    <issue></issue>
+    
+    <js-module src="www/opcvExample.js" name="opcvExample">
+        <clobbers target="opcvExample" />
+    </js-module>
+    
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="opcvExample" >
+                <param name="android-package" value="com.plugin.opcvExample.opcvExample"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/opcvExample.java" target-dir="src/com/plugin/opcvExample/" />
+        <hook type="before_prepare" src="hooks/hook-res-native.js" />
+    </platform>
+    
+</plugin>
