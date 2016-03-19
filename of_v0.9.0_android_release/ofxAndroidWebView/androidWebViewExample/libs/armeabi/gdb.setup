@@ -1,0 +1,6 @@
+set solib-search-path /Users/pelayomendez/Documents/kalliope/consumers/libs/openFrameworks-stable/addons/ofxAndroidWebView/androidWebViewExample/obj/local/armeabi:/Users/pelayomendez/Documents/kalliope/consumers/libs/openFrameworks-stable/addons/ofxAndroidWebView/androidWebViewExample/libs/armeabi
+directory /Users/pelayomendez/Documents/android/android-ndk-r9d/platforms/android-17/arch-arm/usr/include
+directory /Users/pelayomendez/Documents/kalliope/consumers/libs/openFrameworks-stable/addons/ofxAndroidWebView/androidWebViewExample/src
+directory /Users/pelayomendez/Documents/android/android-ndk-r9d/sources/cxx-stl/system
+directory /Users/pelayomendez/Documents/kalliope/consumers/libs/openFrameworks-stable/addons/ofxAndroidWebView/androidWebViewExample/libs/armeabi
+

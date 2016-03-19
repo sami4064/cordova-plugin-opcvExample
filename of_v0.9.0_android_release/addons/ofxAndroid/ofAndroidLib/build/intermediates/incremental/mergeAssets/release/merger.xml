@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/Users/MAbdulSami/opcvProject/opcvProject/platforms/android/of_v0.9.0_android_release/addons/ofxAndroid/ofAndroidLib/assets"/></dataSet><dataSet config="release"><source path="/Users/MAbdulSami/opcvProject/opcvProject/platforms/android/of_v0.9.0_android_release/addons/ofxAndroid/ofAndroidLib/src/release/assets"/></dataSet></merger>

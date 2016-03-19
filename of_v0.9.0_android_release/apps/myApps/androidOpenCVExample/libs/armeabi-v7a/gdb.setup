@@ -1,0 +1,7 @@
+set solib-search-path /Users/assdrive/dev/of_v0.9.0_android_release/apps/myApps/androidOpenCVExample/obj/local/armeabi-v7a:/Users/assdrive/dev/of_v0.9.0_android_release/apps/myApps/androidOpenCVExample/libs/armeabi-v7a
+set sysroot /Users/assdrive/dev/android-ndk-r10e/platforms/android-19/arch-arm/
+directory /Users/assdrive/dev/android-ndk-r10e/platforms/android-19/arch-arm/usr/include
+directory /Users/assdrive/dev/of_v0.9.0_android_release/apps/myApps/androidOpenCVExample/src
+directory /Users/assdrive/dev/android-ndk-r10e/sources/cxx-stl/system
+directory /Users/assdrive/dev/of_v0.9.0_android_release/apps/myApps/androidOpenCVExample/libs/armeabi-v7a
+
