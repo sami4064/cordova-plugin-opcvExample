@@ -37,8 +37,25 @@ dirtocopy.forEach(function(obj) {
                                              });
                     });
 
-
+    var plugin_gradle_string = 'include ":CordovaLib"'+'\n'
+    +'//Extras From OpenCV project start here'+'\n'
+    +'include ":androidOpenCVExample"'+'\n'
+    +"project(':androidOpenCVExample').projectDir = new File('of_v0.9.0_android_release/apps/myApps/androidOpenCVExample')"+'\n'
+    +"def ofRoot = 'of_v0.9.0_android_release/'"+'\n'
+    +"include ':ofAndroidLib'"+'\n'
+    +"project(':ofAndroidLib').projectDir = new File(ofRoot + 'addons/ofxAndroid/ofAndroidLib')"+'\n'
+    +"include ':openFrameworksProject'"+'\n'
+    +"project(':openFrameworksProject').projectDir = new File(ofRoot + 'libs/openFrameworksCompiled/project/android')"+'\n'
+    +"include ':openFrameworks'"+'\n'
+    +"project(':openFrameworks').projectDir = new File(ofRoot + 'libs/openFrameworks')"+'\n'
+    +"//Extras From OpenCV project end here"+'\n';
     
+    replace_string_in_file("platforms/android/settings.gradle",'include ":CordovaLib"',plugin_gradle_string);
+    
+    
+    var plugin_gradle_build_string = "// SUB-PROJECT DEPENDENCIES END"+'\n'
+    +"compile project(':androidOpenCVExample')";
+    replace_string_in_file("platforms/android/build.gradle","// SUB-PROJECT DEPENDENCIES END",plugin_gradle_build_string);
     
 function replace_string_in_file(filename, to_replace, replace_with) {
         var data = fs.readFileSync(filename, 'utf8');
