@@ -6,11 +6,14 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaInterface;
 import android.util.Log;
 import android.provider.Settings;
+import android.content.Intent;
 
 import android.widget.Toast;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import cc.openframeworks.androidOpenCVExample.OFActivity;
 
 public class opcvExample extends CordovaPlugin {
     
@@ -45,6 +48,8 @@ public class opcvExample extends CordovaPlugin {
             public void run() {
                 Toast toast = Toast.makeText(cordova.getActivity().getApplicationContext(), action, duration);
                 toast.show();
+                Intent in = new Intent(cordova.getActivity().getApplicationContext(), OFActivity.class);
+                cordova.getActivity().startActivity(in);
             }
         });
         
