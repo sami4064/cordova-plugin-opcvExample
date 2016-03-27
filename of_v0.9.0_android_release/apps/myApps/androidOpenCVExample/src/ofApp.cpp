@@ -2,6 +2,16 @@
 
 using namespace ofxCv;
 using namespace cv;
+//______________________________________________________________
+//            Detection Result String sender to Java
+
+void ofApp::sendDetectionResultStringtoJava(std::string message) {
+	jstring jStringParam = ofGetJNIEnv()->NewStringUTF(message.c_str());
+	jclass cls = ofGetJNIEnv()->FindClass("cc/openframeworks/androidOpenCVEample/OFActivity");//GetObjectClass(ofGetOFActivityObject());
+	ofGetJNIEnv()->CallVoidMethod(cls, ofGetJNIEnv()->GetMethodID(cls, "detectionCallback", "(Ljava/lang/String;)V"), jStringParam); //"detectionCallback" is the name of a void method of ofActivity.java
+	ofGetJNIEnv()->DeleteLocalRef(jStringParam);
+}
+
 //--------------------------------------------------------------
 void ofApp::setup(){
 	ofBackground(255,255,255);
@@ -19,7 +29,7 @@ void ofApp::setup(){
 
 	detector.w = w;
 	detector.h = h;
-	detector.setup();
+	detector.setup(this);
 
 }
 

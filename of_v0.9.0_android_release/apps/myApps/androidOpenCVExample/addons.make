@@ -1,5 +1,5 @@
-ofxAndroid
-ofxAccelerometer
 ofxOpenCv
 ofxCv
 ofxAndroidWebView
+ofxAndroid
+ofxAccelerometer

@@ -24,6 +24,12 @@ import java.util.concurrent.ExecutorService;
 
 public class OFActivity extends cc.openframeworks.OFActivity {
 
+    public static final int DETECTION_REQUEST_CODE = 1010;
+    public static OFActivity ofActivity;
+    public static void detectionCallback(String code){
+        Log.d("detected result",code);
+        ofActivity.finishActivity(DETECTION_REQUEST_CODE);
+    }
 
 
 	@Override
@@ -31,7 +37,7 @@ public class OFActivity extends cc.openframeworks.OFActivity {
     { 
         super.onCreate(savedInstanceState);
         String packageName = getPackageName();
-
+        ofActivity=this;
         ofApp = new OFAndroid(packageName,this);
 
 
