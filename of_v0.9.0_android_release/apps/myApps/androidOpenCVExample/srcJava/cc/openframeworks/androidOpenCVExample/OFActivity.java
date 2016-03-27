@@ -27,8 +27,14 @@ public class OFActivity extends cc.openframeworks.OFActivity {
     public static final int DETECTION_REQUEST_CODE = 1010;
     public static OFActivity ofActivity;
     public static void detectionCallback(String code){
-        Log.d("detected result",code);
-        ofActivity.finishActivity(DETECTION_REQUEST_CODE);
+        ofActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Log.d("detected result", code);
+                Toast.makeText(ofActivity.getApplicationContext(), "detected result" + code, Toast.LENGTH_LONG).show();
+                ofActivity.finishActivity(DETECTION_REQUEST_CODE);
+            }
+        });
     }
 
 

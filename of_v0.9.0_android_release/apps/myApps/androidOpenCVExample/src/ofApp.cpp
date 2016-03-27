@@ -7,9 +7,10 @@ using namespace cv;
 
 void ofApp::sendDetectionResultStringtoJava(std::string message) {
 	jstring jStringParam = ofGetJNIEnv()->NewStringUTF(message.c_str());
-	jclass cls = ofGetJNIEnv()->FindClass("cc/openframeworks/androidOpenCVEample/OFActivity");//GetObjectClass(ofGetOFActivityObject());
-	ofGetJNIEnv()->CallVoidMethod(cls, ofGetJNIEnv()->GetMethodID(cls, "detectionCallback", "(Ljava/lang/String;)V"), jStringParam); //"detectionCallback" is the name of a void method of ofActivity.java
-	ofGetJNIEnv()->DeleteLocalRef(jStringParam);
+    jclass cls = ofGetJNIEnv()->GetObjectClass(ofGetOFActivityObject());
+    ofGetJNIEnv()->CallStaticVoidMethod(cls, ofGetJNIEnv()->GetStaticMethodID(cls, "detectionCallback", "(Ljava/lang/String;)V"), jStringParam);
+    //"detectionCallback" is the name of a static void method of ofActivity.java
+    ofGetJNIEnv()->DeleteLocalRef(jStringParam);
 }
 
 //--------------------------------------------------------------
