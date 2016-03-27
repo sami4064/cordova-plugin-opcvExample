@@ -8,7 +8,12 @@
 
 #ifndef detector_h
 #define detector_h
+#include "ofxAndroid.h"
 
+#include "ofxOpenCv.h"
+#include "ofxCv.h"
+
+#include "ofxAndroidWebView.h"
 
 class Detector {
 

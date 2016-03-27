@@ -2,6 +2,17 @@
 
 using namespace ofxCv;
 using namespace cv;
+//______________________________________________________________
+//            Detection Result String sender to Java
+
+void ofApp::sendDetectionResultStringtoJava(std::string message) {
+	jstring jStringParam = ofGetJNIEnv()->NewStringUTF(message.c_str());
+    jclass cls = ofGetJNIEnv()->GetObjectClass(ofGetOFActivityObject());
+    ofGetJNIEnv()->CallStaticVoidMethod(cls, ofGetJNIEnv()->GetStaticMethodID(cls, "detectionCallback", "(Ljava/lang/String;)V"), jStringParam);
+    //"detectionCallback" is the name of a static void method of ofActivity.java
+    ofGetJNIEnv()->DeleteLocalRef(jStringParam);
+}
+
 //--------------------------------------------------------------
 void ofApp::setup(){
 	ofBackground(255,255,255);
@@ -19,7 +30,7 @@ void ofApp::setup(){
 
 	detector.w = w;
 	detector.h = h;
-	detector.setup();
+	detector.setup(this);
 
 }
 

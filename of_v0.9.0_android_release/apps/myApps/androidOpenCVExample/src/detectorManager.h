@@ -5,7 +5,7 @@
 //  Created by Gabi Greenhorn on 15.02.16.
 //
 //
-
+class ofApp;
 #include "detector.h"
 
 #ifndef detectorManager_h
@@ -16,6 +16,7 @@ class DetectorManager {
 
 
 public:
+    ofApp * app;
     Detector detectorRed, detectorOrange, detectorGreen;
     float numRed, numOrange, numGreen;
     cv::Mat camMat, camHsv, redMat, greenMat, orangeMat, outMat;
@@ -63,7 +64,8 @@ public:
 
     }
 
-    void setup(){
+    void setup(ofApp* app){
+        this->app = app;
         myfont.load("verdana.ttf", 150);
     }
 
@@ -143,13 +145,7 @@ public:
         }
     }
 
-    void detectionCallback(int code){
-        // we have winner!
-        // this code should now be returned into
-        // the cordova js callback of the plugin
-
-        cout << "FOUND ERROR CODE " << ofToString(code) << endl;
-    }
+    void detectionCallback(int code);
 
     void draw() {
 

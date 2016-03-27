@@ -13,8 +13,9 @@
 class ofApp : public ofxAndroidApp{
 	
 	public:
-		
-		void setup();
+	//Detection result sender to java
+	void sendDetectionResultStringtoJava(std::string message);
+	void setup();
 		void update();
 		void draw();
 
