@@ -8,10 +8,10 @@
                console.log("opcvExample.js: showToast");
                
                exec(function(result){
-                    /*alert("OK" + reply);*/
+                    alert("OK" + reply);
                     },
                     function(result){
-                    /*alert("Error" + reply);*/
+                    alert("Error" + reply);
                     },"opcvExample",aString,[]);
                }
                
