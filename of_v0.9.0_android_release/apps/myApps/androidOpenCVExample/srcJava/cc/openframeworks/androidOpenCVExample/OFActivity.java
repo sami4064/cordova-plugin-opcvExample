@@ -15,6 +15,7 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import org.json.JSONException;
 
@@ -26,7 +27,7 @@ public class OFActivity extends cc.openframeworks.OFActivity {
 
     public static final int DETECTION_REQUEST_CODE = 1010;
     public static OFActivity ofActivity;
-    public static void detectionCallback(String code){
+    public static void detectionCallback(final String code){
         ofActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
