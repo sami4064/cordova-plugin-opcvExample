@@ -1,3 +1,4 @@
+cordova.define("cordova-plugin-opcvExample.opcvExample", function(require, exports, module) {
                var exec = require('cordova/exec');
                
                function OpcvExample() {
@@ -17,3 +18,5 @@
                
                var opcvExample = new OpcvExample();
                module.exports = opcvExample;
+
+});

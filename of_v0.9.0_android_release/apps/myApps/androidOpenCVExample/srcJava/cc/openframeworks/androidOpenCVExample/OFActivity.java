@@ -1,6 +1,7 @@
 package cc.openframeworks.androidOpenCVExample;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import org.json.JSONException;
 
@@ -26,15 +28,21 @@ public class OFActivity extends cc.openframeworks.OFActivity {
 
     public static final int DETECTION_REQUEST_CODE = 1010;
     public static OFActivity ofActivity;
-    public static void detectionCallback(String code){
+    private static boolean callBackReceived = false;
+    public static void detectionCallback(final String code){
+        if(!callBackReceived)
         ofActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 Log.d("detected result", code);
                 Toast.makeText(ofActivity.getApplicationContext(), "detected result" + code, Toast.LENGTH_LONG).show();
-                ofActivity.finishActivity(DETECTION_REQUEST_CODE);
+                Intent in = new Intent();
+                in.putExtra("result_code",code);
+                ofActivity.setResult(RESULT_OK,in);
+                ofActivity.finish();
             }
         });
+        callBackReceived = true;
     }
 
 
@@ -44,6 +52,7 @@ public class OFActivity extends cc.openframeworks.OFActivity {
         super.onCreate(savedInstanceState);
         String packageName = getPackageName();
         ofActivity=this;
+        callBackReceived=false;
         ofApp = new OFAndroid(packageName,this);
 
 

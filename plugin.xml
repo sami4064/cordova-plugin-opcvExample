@@ -10,7 +10,7 @@
     <repo></repo>
     <issue></issue>
     
-    <js-module src="www/opcvExample.js" name="opcvExample">
+    <js-module src="opcvExample.js" name="opcvExample">
         <clobbers target="opcvExample" />
     </js-module>
     
