@@ -5,15 +5,15 @@ cordova.define("cordova-plugin-opcvExample.opcvExample", function(require, expor
                console.log("opcvExample.js: is created");
                }
                
-               OpcvExample.prototype.showToast = function(aString){
-               console.log("opcvExample.js: showToast");
+               OpcvExample.prototype.startScan = function(callback){
+               console.log("opcvExample.js: startScan");
                
                exec(function(result){
-                    alert("OK" + reply);
+                        callback(result);
                     },
                     function(result){
                     /*alert("Error" + reply);*/
-                    },"opcvExample",aString,[]);
+                    },"opcvExample","startScan",[]);
                }
                
                var opcvExample = new OpcvExample();
