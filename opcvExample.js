@@ -12,7 +12,7 @@ cordova.define("cordova-plugin-opcvExample.opcvExample", function(require, expor
                     alert("OK" + reply);
                     },
                     function(result){
-                    /*alert("Error" + reply);*/
+                    alert("Error" + reply);
                     },"opcvExample",aString,[]);
                }
                
