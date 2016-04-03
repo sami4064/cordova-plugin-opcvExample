@@ -1,1 +1,0 @@
--O0 -g3 -DANDROID_NDK -D_DEBUG -DDEBUG -Wall -std=c++14 -nostdlib --sysroot=/Users/assdrive/dev/android-ndk-r10e/platforms/android-19/arch-arm/ -fno-short-enums -ffunction-sections -fdata-sections -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -DANDROID
