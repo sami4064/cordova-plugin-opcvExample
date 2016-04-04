@@ -6,7 +6,7 @@
 #include "ofxOpenCv.h"
 #include "ofxCv.h"
 
-#include "ofxAndroidWebView.h"
+//#include "ofxAndroidWebView.h"
 
 #include "detectorManager.h"
 
@@ -45,5 +45,5 @@ class ofApp : public ofxAndroidApp{
 
         DetectorManager detector;
 
-        ofxAndroidWebView webView;
+     //   ofxAndroidWebView webView;
 };

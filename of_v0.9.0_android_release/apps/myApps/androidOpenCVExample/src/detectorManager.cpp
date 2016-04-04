@@ -12,5 +12,8 @@ void DetectorManager::detectionCallback(int code){
     // the cordova js callback of the plugin
     this->app->sendDetectionResultStringtoJava(ofToString(code));
 
+    detectedCodeCount = 0;
+    detectedCode = 0;
+
     cout << "FOUND ERROR CODE " << ofToString(code) << endl;
 }

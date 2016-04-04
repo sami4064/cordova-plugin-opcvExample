@@ -13,7 +13,7 @@
 #include "ofxOpenCv.h"
 #include "ofxCv.h"
 
-#include "ofxAndroidWebView.h"
+//#include "ofxAndroidWebView.h"
 
 class Detector {
 

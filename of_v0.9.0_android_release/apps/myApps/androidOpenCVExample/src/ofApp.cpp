@@ -19,6 +19,8 @@ void ofApp::setup(){
 	ofSetLogLevel(OF_LOG_NOTICE);
 	ofSetOrientation(OF_ORIENTATION_90_LEFT);
 
+	cout << "START NOW " << endl;
+
 	// we want to have the camera running on the lowest
 	// quality/resolution for having the best performance
 	// the camera feed should be displayed in fullscreen
@@ -42,8 +44,8 @@ void ofApp::update(){
 	video.update();
 
 	if(video.isFrameNew()) {
-		// if there is a new video frame
-		// the detection is triggered on that frame
+	// 	// if there is a new video frame
+	// 	// the detection is triggered on that frame
 
 		detector.loadFrame(toCv(video));
 
@@ -56,15 +58,15 @@ void ofApp::draw(){
 	ofSetBackgroundColor(0, 0, 0);
 	ofSetColor(255,255,255);
 
-	// preview camera feed
+	// // preview camera feed
 	drawMat(detector.camMat, 0, 0, ofGetWidth(),  ofGetHeight());
 
-	// detection debug draw
-	detector.draw();
+	// // detection debug draw
+	 detector.draw();
 
 
 	string msg = ofToString((int) ofGetFrameRate()) + " fps";
-	ofDrawBitmapString(msg, ofGetWidth() - 80, ofGetHeight() - 20);
+	 ofDrawBitmapString(msg, ofGetWidth() - 80, ofGetHeight() - 20);
 
 }
 
